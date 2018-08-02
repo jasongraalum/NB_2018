@@ -2,25 +2,28 @@
 //
 //
 #include "Dungeon.hpp"
+#include "Room.hpp"
 
-Dungeon::Dungeon(int dungeon_x, int dungeon_y)
+Dungeon::Dungeon()
 {
-    x = dungeon_x;
-    y = dungeon_y;
-    player_x = 0;
-    player_y = 0;
+   entry = new Room();
+   exit = new Room();
+
+   Room * d_room; 
+   d_room = new Room[4];
+
+   entry->doors[1] = &d_room[2];
+   d_room[2].doors[0] = &d_room[0];
+   d_room[0].doors[1] = &d_room[1];
+   d_room[1].doors[2] = &d_room[3];
+   d_room[3].doors[1] = exit; 
+   d_room[3].doors[3] = &d_room[2];
+
+
+   player_room = entry;
 }
 
-bool Dungeon::move_player(char move)
-{
-    return false;
-}
-
-char Dungeon::get_player_input()
-{
-    return 'x';
-}
-
+/*
 void Dungeon::display()
 {
     for(int y_direction = 0; y_direction < y; y_direction++) {
@@ -33,3 +36,4 @@ void Dungeon::display()
         cout << endl;
     }
 }
+*/

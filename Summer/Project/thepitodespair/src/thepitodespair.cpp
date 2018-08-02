@@ -2,17 +2,24 @@
 //
 //
 #include "Dungeon.hpp"
+#include "Room.hpp"
+
+using namespace std;
 
 int main()
 {
-    char player_move;
+    char room_desc[100];
 
-    Dungeon pit_of_despair(10, 10);
+    cout << "Describe a room: ";
+    cin.getline(room_desc, 100);
 
-    pit_of_despair.display();
+    Dungeon pit_of_despair;
 
-    while((player_move = pit_of_despair.get_player_input()) != 'x')
-    {
-        pit_of_despair.move_player(player_move);
-    }
+    //pit_of_despair.display();
+
+    Room test_room1;
+    test_room1.describe();
+
+    Room test_room2(room_desc);
+    test_room2.describe();
 }

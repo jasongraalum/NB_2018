@@ -5,20 +5,18 @@
 // This is a class to define ThePit Dungeon
 //
 #include <iostream>
+#include "Room.hpp"
 
 using namespace std;
 
 class Dungeon {
     public:
-        Dungeon(int, int);
-        bool move_player(char);
-        char get_player_input();
+        Dungeon();
         void display();
 
     private:
-        int x;
-        int y;
-        int player_x;
-        int player_y;
+        Room * entry;
+        Room * exit;
+        Room * player_room;
 };
 
