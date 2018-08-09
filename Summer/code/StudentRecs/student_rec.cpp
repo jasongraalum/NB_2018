@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <cstring>
 #include <fstream>
 
 using namespace std;
@@ -7,7 +8,7 @@ using namespace std;
 int main()
 {
     ifstream fip;
-    fip.open("/Users/jasongraalum/student_records.txt");
+    fip.open("/u/jgraalum/student_records.txt");
 
     char * last_name;
     char * first_name;
@@ -50,9 +51,9 @@ int main()
             cout << "ID : " << id << endl;
             cout << "DOB : " << dob << endl;
 
-            delete first_name [];
-            delete last_name [];
-            delete dob [];
+            delete [] first_name;
+            delete [] last_name;
+            delete [] dob;
         }
 
     }
