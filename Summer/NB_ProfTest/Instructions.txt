@@ -1,0 +1,27 @@
+New
+
+Data file:
+
+
+1. A text file is provided.
+2. Read in the file and count each character - ignoring case.
+    Do not count numbers or punctuation.
+
+3. Output a histogram of the character counts - one * for every 10 characters.
+
+
+Output should look like:
+
+a -  78 - ********
+b -  32 - ***
+c -   8 - *
+d -  18 - **
+e - 110 - *************
+.
+.
+z -   3 - *
+
+
+
+
+
