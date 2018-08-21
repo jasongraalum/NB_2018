@@ -1,4 +1,4 @@
-#include <iostream>
+//#include <iostream>
 #include <fstream>
 #include <iomanip>
 
@@ -37,7 +37,9 @@ int main()
         fip.close();
     }
     else
-        cout << "Error opening file" << endl;
+        return -1;
+
+        //cout << "Error opening file" << endl;
 
     fop.open("Count.txt");
     if(fop.is_open()) {
@@ -55,6 +57,7 @@ int main()
         fop.close();
     }
     else {
-        cout << "Error: unable to open output file." << endl;
+        return -2;
+        //cout << "Error: unable to open output file." << endl;
     }
 }

@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
         }
     }
 
+    /*
     for ( int i = 2; i <= upper_limit; i++ )
     {
         if ( primes[i] == true  )
@@ -46,6 +47,7 @@ int main(int argc, char *argv[])
             cout << i << endl;
         }
     }
+    */
 
     
 
