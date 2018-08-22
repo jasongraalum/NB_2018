@@ -3,10 +3,15 @@
 #include <cstring>
 #include <fstream>
 
+#include "StudentList.hpp"
+
 using namespace std;
 
 int main()
 {
+    StudentList *  nb2018;
+    nb2018 = new StudentList;
+
     ifstream fip;
     fip.open("/u/jgraalum/student_records.txt");
 
@@ -23,6 +28,7 @@ int main()
         char field2[100];
         char field3[100];
         char field4[100];
+        
         while(fip.get(field1, 100, ':') && !fip.eof()) {
             fip.ignore();
             fip.get(field2, 100, ':');
@@ -51,9 +57,7 @@ int main()
             cout << "ID : " << id << endl;
             cout << "DOB : " << dob << endl;
 
-            delete [] first_name;
-            delete [] last_name;
-            delete [] dob;
+            nb2018->addStudent(first_name, last_name, dob, id);
         }
 
     }
