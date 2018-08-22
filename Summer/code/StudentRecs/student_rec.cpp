@@ -13,7 +13,7 @@ int main()
     nb2018 = new StudentList;
 
     ifstream fip;
-    fip.open("/u/jgraalum/student_records.txt");
+    fip.open("student_test_records.txt");
 
     char * last_name;
     char * first_name;
@@ -38,6 +38,7 @@ int main()
             fip.get(field4, 100, '\n');
             fip.ignore();
 
+
             int first_name_len = strlen(field1);
             first_name = new char[first_name_len + 1];
             strcpy(first_name, field1);
@@ -57,7 +58,9 @@ int main()
             cout << "ID : " << id << endl;
             cout << "DOB : " << dob << endl;
 
+            cout << "Adding new record" << endl;
             nb2018->addStudent(first_name, last_name, dob, id);
+            cout << "New record added" << endl;
         }
 
     }
@@ -65,4 +68,7 @@ int main()
     {
         cout << "Error: could not open file." << endl;
     }
+    nb2018->display();
+
+    
 }
