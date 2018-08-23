@@ -15,10 +15,6 @@ int main()
     ifstream fip;
     fip.open("student_test_records.txt");
 
-    char * last_name;
-    char * first_name;
-    int id;
-    char * dob;
 
     //  Last(char*):First(char*):ID(int):DOB(char*)
     //  Not field is greater than 100 characters
@@ -29,6 +25,11 @@ int main()
         char field3[100];
         char field4[100];
         
+        char * last_name;
+        char * first_name;
+        int id;
+        char * dob;
+
         while(fip.get(field1, 100, ':') && !fip.eof()) {
             fip.ignore();
             fip.get(field2, 100, ':');
@@ -69,6 +70,8 @@ int main()
         cout << "Error: could not open file." << endl;
     }
     nb2018->display();
+
+    delete nb2018;
 
     
 }

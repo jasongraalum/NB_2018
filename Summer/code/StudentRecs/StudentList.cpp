@@ -4,6 +4,15 @@ StudentList::StudentList() {
     head = NULL;
 }
 
+StudentList::~StudentList() {
+   Student * current = head;
+   while(head != NULL) {
+      head = current->getNext();
+      delete current;
+      current = head;
+   }
+}
+
 bool StudentList::addStudent(char * lastname, char * firstname, char * dob, int id)
 {
     Student * temp = new Student(lastname, firstname, dob, id);
@@ -25,6 +34,7 @@ bool StudentList::addStudent(char * lastname, char * firstname, char * dob, int 
         cout << "Case 3 Insert" << endl;
         if(current->getId() == temp->getId()) {
             duplicate_message(current,temp);
+            delete temp;
             return false;
         }
 
@@ -37,6 +47,7 @@ bool StudentList::addStudent(char * lastname, char * firstname, char * dob, int 
                  current->getId() == temp->getId())
                 ) { 
             duplicate_message(current, temp);
+            delete temp;
             return false; 
         }
         temp->setNext(current->getNext());

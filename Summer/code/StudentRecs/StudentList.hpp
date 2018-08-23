@@ -9,6 +9,7 @@ class StudentList {
     Student * head;
     public:
     StudentList();
+    ~StudentList();
     bool addStudent(char *, char *, char *, int);
     bool deleteStudentByID(int);
     void display();
