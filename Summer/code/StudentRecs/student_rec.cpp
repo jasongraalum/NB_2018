@@ -63,7 +63,6 @@ int main()
             nb2018->addStudent(first_name, last_name, dob, id);
             cout << "New record added" << endl;
         }
-
     }
     else
     {
@@ -72,6 +71,6 @@ int main()
     nb2018->display();
 
     delete nb2018;
+    nb2018 = NULL;
 
-    
 }

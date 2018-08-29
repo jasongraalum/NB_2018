@@ -9,7 +9,8 @@ Student::Student(char * lastname, char * firstname, char * dob, int id)
 }
 Student::~Student() 
 {
-    delete data;
+    if(data) delete data;
+    data = NULL;
 }
 void Student::display()
 {

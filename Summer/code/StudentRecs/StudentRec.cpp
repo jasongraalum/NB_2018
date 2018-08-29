@@ -2,7 +2,7 @@
 
 StudentRec::StudentRec(char * lname, char * fname, char * date, int i) 
 {
-    lastname = lname;
+    lastname = lname; 
     firstname = fname;
     dob = date;
     id = i;
@@ -10,8 +10,11 @@ StudentRec::StudentRec(char * lname, char * fname, char * date, int i)
 
 StudentRec::~StudentRec() {
     if(lastname) delete [] lastname;
+    lastname = NULL;
     if(firstname) delete [] firstname;
+    firstname = NULL;
     if(dob) delete [] dob;
+    dob = NULL;
 }
 
 void StudentRec::display() {
