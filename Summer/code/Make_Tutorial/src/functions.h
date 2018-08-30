@@ -1,2 +1,2 @@
 void print_hello();
-int factorial(int n);
+long int factorial(long int n);

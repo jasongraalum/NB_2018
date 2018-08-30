@@ -1,6 +1,6 @@
 #include "functions.h"
 
-int factorial(int n){
+long int factorial(long int n){
    
    if(n!=1){
       return(n * factorial(n-1));
