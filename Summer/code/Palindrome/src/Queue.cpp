@@ -25,7 +25,6 @@ Queue::~Queue(){
     }
 }
 void Queue::enqueue(char c) {
-    std::cout << "Enqueue: " << c << std::endl;
     Node * new_node = new Node(c);
     if(back) {
         back->setNext(new_node);
@@ -38,7 +37,6 @@ void Queue::enqueue(char c) {
 char Queue::dequeue() {
     Node * n = front;
     char c = n->getData();
-    std::cout << "Dequeue: " << c << std::endl;
     front = front->getNext();
     delete n;
     return c;

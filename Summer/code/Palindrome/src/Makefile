@@ -7,11 +7,21 @@ CC = g++
 INCLUDE =
 LIBS = 
 
-test1: test1.cpp palindrome.o
-	${CC} ${CFLAGS} ${INCLUDES} -c test1.cpp
-	${CC} ${CFLAGS} ${INCLUDES} -o test1 test1.o ${OBJS}
-	./test1 aba true
-	./test1 abc false
+test:
+	make test1
+	make test2
+
+test1:
+	make palin_test
+	./palin_test aba true
+
+test2:
+	make palin_test
+	./palin_test abc false
+
+palin_test: palin_test.cpp palindrome.o
+	${CC} ${CFLAGS} ${INCLUDES} -c palin_test.cpp
+	${CC} ${CFLAGS} ${INCLUDES} -o palin_test palin_test.o ${OBJS}
 
 palindrome.o: palindrome.cpp palindrome.hpp Stack.o Queue.o
 	${CC} ${CFLAGS} ${INCLUDES} -c  palindrome.cpp

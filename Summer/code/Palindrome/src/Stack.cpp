@@ -24,7 +24,6 @@ Stack::~Stack()
 }
 
 void Stack::push(char c) {
-    std::cout << "Pushing: " << c << std::endl;
     Node * new_node = new Node(c);
     new_node->setNext(top);
     top = new_node;
@@ -33,7 +32,6 @@ void Stack::push(char c) {
 char Stack::pop() {
     Node * popped = top;
     char data = top->getData();
-    std::cout << "Popping: " << data << std::endl;
     top = top->getNext();
     delete popped;
     return data;

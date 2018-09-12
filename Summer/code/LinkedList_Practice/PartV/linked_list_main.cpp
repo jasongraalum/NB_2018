@@ -43,7 +43,7 @@ int main()
     List * myList = new List;
 
     //
-    // Add 5 random integer values between 0 and 999 to myList
+    // Add 10 random integer values between 0 and 999 to myList
     //
     for(int i = 0; i < 10; i++) {
         int random_val = rand() % 1000;
@@ -61,13 +61,7 @@ int main()
     //
     // Display myList
     //
-        std::cout << std::endl;
-        std::cout << std::endl;
     myList->displayByData();
-        std::cout << std::endl;
-        std::cout << std::endl;
     myList->displayByName();
-        std::cout << std::endl;
-        std::cout << std::endl;
 }
 
